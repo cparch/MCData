@@ -12,7 +12,22 @@ const mcdDataSchema = new mongoose.Schema({
 
 const McDatas = mongoose.model('McDatas', mcdDataSchema);
 
-module.exports.getData = (callback) => {
+module.exports.getSpecificBrand = (params,callback) => {
+
+  McDatas.find({ brand: params.brand },(err, success) => {
+    callback(err, success)
+  })
+}
+
+// test getData 
+// getData({brand: "BMW"},
+//   (err, McDatas) => {
+//     if (err) {console.error(err)}
+//     else {console.log(McDatas)}
+//   } 
+// )
+
+module.exports.getAllData = (callback) => {
 
   McDatas.find((err, success) => {
     callback(err, success)
@@ -20,12 +35,12 @@ module.exports.getData = (callback) => {
 }
 
 // // test getData 
-// getData(
-//   (err, McDatas) => {
+// getAllData((err, McDatas) => {
 //     if (err) {console.error(err)}
 //     else {console.log(McDatas)}
 //   } 
 // )
+
 
 
 

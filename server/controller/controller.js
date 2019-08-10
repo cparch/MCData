@@ -1,14 +1,25 @@
 const model = require('../../db/model/model')
 
-module.exports.getData = (req, res) => {
-  model.getData((err, success) => {
+module.exports.getSpecificBrand = (req, res) => {
+  model.getSpecificBrand(req.params, (err, success) => {
     if(err) {
       console.log(err);
       res.status(500).end()
     } else {
-      console.log('data obtained from db')
+      console.log('Brand specific data obtained from db')
       res.send(success).status(200).end()
     }
   })
 }
 
+module.exports.getAllData = (req, res) => {
+  model.getAllData((err, success) => {
+    if(err) {
+      console.log(err);
+      res.status(500).end();
+    } else {
+      console.log('Obtained all Data from db')
+      res.send(success)
+    }
+  })
+}
