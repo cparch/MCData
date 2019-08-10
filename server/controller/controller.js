@@ -23,3 +23,15 @@ module.exports.getAllData = (req, res) => {
     }
   })
 }
+
+module.exports.getMultipleBrands = (req, res) => {
+  model.getMultipleBrands(req.params, (err, success) => {
+    if(err){
+      console.log(err);
+      res.status(500).end();
+    } else {
+      res.send(success);
+      console.log("obtained Data for multiple brands")
+    }
+  })
+}

@@ -27,6 +27,18 @@ module.exports.getSpecificBrand = (params,callback) => {
 //   } 
 // )
 
+module.exports.getMultipleBrands = (params,callback) => {
+  McDatas.find({ brand: {$in: JSON.parse(params.brands)}},(err, success) => {
+    callback(err, success)
+  })
+}
+
+// getMultipleBrands(["BMW", "Buell"], (err, success) => {
+//     if(err) {console.log(err)}
+//     if(success) {console.log(success)} 
+//   } 
+// )
+
 module.exports.getAllData = (callback) => {
 
   McDatas.find((err, success) => {

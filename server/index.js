@@ -9,4 +9,7 @@ app.get('/brand/:brand', controller.getSpecificBrand )
 app.get('/allbrands', controller.getAllData )
 //http://localhost:3444/allbrands
 
+app.get('/MultipleBrands/:brands', controller.getMultipleBrands )
+// http://localhost:3444/MultipleBrands/["BMW","Buell","Victory"]
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
