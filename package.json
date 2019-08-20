@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon ./server/index.js"
+    "server": "nodemon ./server/index.js",
+    "build": "webpack -d --watch"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,22 @@
   },
   "homepage": "https://github.com/cparch/MCData#readme",
   "dependencies": {
+    "chart.js": "^2.8.0",
+    "d3": "^5.9.7",
     "express": "^4.17.1",
+    "jquery": "^3.4.1",
     "mongoose": "^5.6.9",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "react": "^16.9.0",
+    "react-chartjs-2": "^2.7.6",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
   }
 }
